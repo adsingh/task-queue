@@ -8,7 +8,7 @@ export interface QueueState {
     tasksData: TaskInfo[]
 }
 
-export class Queue extends React.Component {
+export class Queue extends React.Component<{rootElement: HTMLElement}, QueueState> {
 
     state: QueueState = {
         tasksData: tasksInfo
@@ -23,6 +23,7 @@ export class Queue extends React.Component {
                         description={description}
                         status={status}
                         title={title}
+                        rootElement={this.props.rootElement}
                         />
         });
 
