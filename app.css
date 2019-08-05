@@ -16,19 +16,3 @@ html, body{
     box-sizing: border-box;
     overflow: auto;
 }
-
-.btn{
-    background: none;
-    outline: none;
-    text-decoration: none;
-    border: 1px solid gray;
-    border-radius: 3px;
-    padding: 5px;
-    margin: 10px 10px;
-}
-
-.btn:hover{
-    background-color: #2e85ff;
-    color: white;
-    cursor: pointer;
-}
