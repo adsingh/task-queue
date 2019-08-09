@@ -34,7 +34,7 @@
     color: white;
 }
 
-.btn:hover{
+.enabled:hover{
     background-color: #2e85ff;
     color: gray;
     cursor: pointer;

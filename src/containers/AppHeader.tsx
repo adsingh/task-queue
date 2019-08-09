@@ -44,14 +44,15 @@ export class AppHeader extends React.Component<AppHeaderProps, {}> {
                     <input className="input" placeholder="Add title..." value={title} onChange={(event: React.FormEvent<HTMLInputElement>) => this.onInputChange(event, InputBoxRole.Title)}></input>
                     <input className="input" placeholder="Add description (Optional)" value={description} onChange={(event: React.FormEvent<HTMLInputElement>) => this.onInputChange(event, InputBoxRole.Description)}></input>
                     <button 
-                        className="btn"
+                        className={"btn " + (title==="" ? "diabled" : "enabled")}
                         onClick={this.onAddTask}
+                        disabled={title===""}
                     >
                         Add
                     </button>
                 </div>
                 <button 
-                    className="btn"
+                    className="btn enabled"
                     onClick={this.props.removeAllTasks}
                 >
                     Remove all

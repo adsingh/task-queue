@@ -4,6 +4,6 @@ import * as ReactDOM from 'react-dom';
 import { Queue } from './containers/Queue';
 
 ReactDOM.render(
-    <Queue />,
+    <Queue localStorageApi={window.localStorage}/>,
     document.getElementById("root")
 );

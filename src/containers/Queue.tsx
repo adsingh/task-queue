@@ -8,10 +8,24 @@ export interface QueueState {
     tasksData: TaskModel[]
 }
 
-export class Queue extends React.Component {
+export interface QueueProps {
+    localStorageApi: Storage;
+}
 
-    state: QueueState = {
-        tasksData: tasksInfo
+const tasksKey: string = "myTasks";
+
+export class Queue extends React.Component<QueueProps, QueueState> {
+
+    storage: Storage;
+    state: QueueState;
+
+    constructor(props: QueueProps) {
+        super(props);
+        this.storage = props.localStorageApi;
+        const tasksFromLocalStorage = JSON.parse(this.storage.getItem(tasksKey));
+        this.state = {
+            tasksData: tasksFromLocalStorage ? tasksFromLocalStorage : []
+        };
     }
 
     highlightTask = (taskId: string) => {
@@ -51,10 +65,12 @@ export class Queue extends React.Component {
 
         const newTasksData = [...this.state.tasksData, newTask];
         this.setState({ tasksData: newTasksData });
+        this.storage.setItem(tasksKey, JSON.stringify(newTasksData));
     }
 
     removeAllTasks = () => {
         this.setState({ tasksData: [] });
+        this.storage.removeItem(tasksKey)
     }
 
     render(){
