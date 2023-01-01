@@ -20,13 +20,13 @@
   "devDependencies": {
     "@types/react": "^16.8.24",
     "@types/react-dom": "^16.8.5",
-    "css-loader": "^3.1.0",
-    "source-map-loader": "^0.2.4",
-    "style-loader": "^0.23.1",
-    "ts-loader": "^6.0.4",
+    "css-loader": "^6.7.3",
+    "source-map-loader": "^4.0.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.2",
     "typescript": "^3.5.3",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "react": "^16.8.6",
